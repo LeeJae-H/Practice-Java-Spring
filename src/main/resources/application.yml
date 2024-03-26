@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/community_db?useSSL=false&serverTimezone=UTC
+    username: spring
+    password: jh540900!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      show_sql: true
+#      format_sql: true

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>메인 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .header a {
+            margin-left: 0;
+            margin-right: 10px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <!-- 세션에 로그인 정보가 있는 경우 -->
+    <th:block th:if="${loggedIn}">
+        <a href="users/logout">로그아웃</a>
+    </th:block>
+    <!-- 세션에 로그인 정보가 없는 경우 -->
+    <th:block th:unless="${loggedIn}">
+        <a href="/users/signup">회원가입</a>
+        <a href="/users/login">로그인</a>
+    </th:block>
+</div>
+<h1>메인 페이지</h1>
+<div class="button-container">
+    <a href="/boards" class="btn-primary">모든 게시글 조회</a>
+    <a href="/boards/add" class="btn-secondary">게시글 작성</a>
+</div>
+</body>
+</html>
+
